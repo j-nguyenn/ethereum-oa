@@ -35,7 +35,7 @@ class Controller {
       key: privateKeyObj,
       padding: crypto.constants.RSA_PKCS1_PSS_PADDING,
     });
-    return signature;
+    return signature.toString('base64');
   }
   verify(message, signature, publicKey) {
     const publicKeyObj = crypto.createPublicKey({
