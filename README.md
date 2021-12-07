@@ -1,5 +1,11 @@
 ###
 
+Install node
+`yarn install`
+
+Start the server
+`yarn start`
+
 ### Generate keys `/api/generate`
 ```js
 // Output
