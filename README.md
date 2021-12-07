@@ -1,20 +1,20 @@
 ###
 
 ### Generate keys `/api/generate`
-
+```js
 // Output
 {
 "privateKey",
 "publicKey"
 }
-
+```
 #### Example cURL
 
 curl --location --request GET 'http://localhost:3000/api/generate' \
 --data-raw ''
 
 ### Sign `/api/sign`
-
+```js
 // Input
 {
 "message": "hello_world",
@@ -24,7 +24,7 @@ curl --location --request GET 'http://localhost:3000/api/generate' \
 {
 "signature": "signature"
 }
-
+```
 #### Example cURL
 
 curl --location --request POST 'http://localhost:3000/api/sign' \
@@ -35,7 +35,7 @@ curl --location --request POST 'http://localhost:3000/api/sign' \
 }'
 
 ### Verify
-
+```js
 // Input
 {
 "message",
@@ -45,7 +45,7 @@ curl --location --request POST 'http://localhost:3000/api/sign' \
 
 // Output
 boolean
-
+```
 #### Example cURL
 
 curl --location --request POST 'http://localhost:3000/api/verify' \
@@ -57,7 +57,7 @@ curl --location --request POST 'http://localhost:3000/api/verify' \
 }'
 
 ### Parse ERC20 `/api/transaction/`
-
+```js
 // Input
 {
 hash
@@ -70,7 +70,7 @@ hash
 "contractAddress",
 "hash"
 }
-
+```
 #### Example cURL
 
 curl --location --request GET 'http://localhost:3000/api/transaction' \
