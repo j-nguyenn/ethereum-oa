@@ -90,7 +90,7 @@ curl --location --request GET 'http://localhost:3000/api/transaction' \
 ### Game of number
 
 ```js
-const gameOfNumbers = (arr, num) => {
+const performCheck = (arr, num) => {
   const numbersMap = arr.reduce((acc, item) => {
     if (acc[item]) {
       acc[item] += 1;
@@ -104,5 +104,15 @@ const gameOfNumbers = (arr, num) => {
     return `Yes ${numbersMap[num]}`;
   }
   return `No`;
+};
+
+const gameOfNumbers = (arr) => {
+  const size = arr[0];
+  const list = arr.slice(1, size + 1);
+  const numberOfRequests = arr[size + 2];
+  const requests = arr.slice(size + 2);
+  requests.forEach((number) => {
+    console.log(performCheck(list, number));
+  });
 };
 ```
