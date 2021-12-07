@@ -7,19 +7,21 @@ Start the server
 `yarn start`
 
 ### Generate keys `/api/generate`
+
 ```js
 // Output
 {
-"privateKey",
-"publicKey"
+  "privateKey", "publicKey";
 }
 ```
+
 #### Example cURL
 
 curl --location --request GET 'http://localhost:3000/api/generate' \
 --data-raw ''
 
 ### Sign `/api/sign`
+
 ```js
 // Input
 {
@@ -31,6 +33,7 @@ curl --location --request GET 'http://localhost:3000/api/generate' \
 "signature": "signature"
 }
 ```
+
 #### Example cURL
 
 curl --location --request POST 'http://localhost:3000/api/sign' \
@@ -41,17 +44,17 @@ curl --location --request POST 'http://localhost:3000/api/sign' \
 }'
 
 ### Verify
+
 ```js
 // Input
 {
-"message",
-"signature",
-"publicKey"
+  "message", "signature", "publicKey";
 }
 
 // Output
-boolean
+boolean;
 ```
+
 #### Example cURL
 
 curl --location --request POST 'http://localhost:3000/api/verify' \
@@ -63,20 +66,19 @@ curl --location --request POST 'http://localhost:3000/api/verify' \
 }'
 
 ### Parse ERC20 `/api/transaction/`
+
 ```js
 // Input
 {
-hash
+  hash;
 }
 
 // Output
 {
-"transfers",
-"blockHeight",
-"contractAddress",
-"hash"
+  "transfers", "blockHeight", "contractAddress", "hash";
 }
 ```
+
 #### Example cURL
 
 curl --location --request GET 'http://localhost:3000/api/transaction' \
@@ -84,3 +86,23 @@ curl --location --request GET 'http://localhost:3000/api/transaction' \
 --data-raw '{
 "hash":"0x6cdb1d1d2828afe634323331e73c65b9d67b2fd1b71c95b3ff4597ec588c09b2"
 }'
+
+### Game of number
+
+```js
+const gameOfNumbers = (arr, num) => {
+  const numbersMap = arr.reduce((acc, item) => {
+    if (acc[item]) {
+      acc[item] += 1;
+    } else {
+      acc[item] = 1;
+    }
+    return acc;
+  }, {});
+
+  if (numbersMap[num]) {
+    return `Yes ${numbersMap[num]}`;
+  }
+  return `No`;
+};
+```
