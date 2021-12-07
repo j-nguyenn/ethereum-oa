@@ -1,4 +1,4 @@
-###
+### Getting started
 
 Install node
 `yarn install`
