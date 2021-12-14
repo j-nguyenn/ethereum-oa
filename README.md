@@ -115,4 +115,11 @@ const gameOfNumbers = (arr) => {
     console.log(performCheck(list, number));
   });
 };
+
+// optimized solution
+/*
+ Since the list is sorted, we can find the last position and first position of the number, then subtract the last position by the first position and plus 1 to get the result.
+ This approach works best when the input data set is grand and number of request is small, but implementation requires using binary search (difficult).  
+ Complexity O(n) 
+*/
 ```
